@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<assembly>
+  <id>release</id>
+  <formats>
+    <format>dir</format>
+    <!--
+    <format>tar.gz</format>
+    <format>zip</format>
+    -->
+  </formats>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+      <includes>
+        <include>org.vsw:vsw.nlp.extract</include>
+        <include>org.vsw:vsw.nlp.core</include>
+        <include>org.vsw:vsw.nlp.query</include>
+
+        <include>commons-cli:commons-cli</include>
+        <include>commons-logging:commons-logging</include>
+
+        <include>org.codehaus.jackson:jackson-core-asl</include>
+        <include>org.codehaus.jackson:jackson-mapper-asl</include>
+
+        <include>org.apache.hadoop:hadoop-core</include>
+
+        <include>org.wikimodel:wem</include>
+        <include>uk.ac.shef.wit:simmetrics</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+
+  <fileSets>
+    <fileSet>
+      <directory>src/data</directory>
+      <outputDirectory>data</outputDirectory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+
+    <fileSet>
+      <directory>src/main/scala</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+
+    <fileSet>
+      <directory>.</directory>
+      <outputDirectory>project</outputDirectory>
+      <includes>
+        <include>pom.xml</include>
+        <include>src/**/*</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

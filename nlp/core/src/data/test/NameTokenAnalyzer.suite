@@ -1,0 +1,15 @@
+{
+  "resource": [ 
+    "classpath:nlp/vietnamese.lexicon.json",
+    "classpath:nlp/lienhe.synset.json",
+    "classpath:nlp/vn.place.json",
+    "classpath:nlp/mobile.product.json"
+  ],
+  "analyzer": ["common", "punctuation", "GroupTokenMerger", "MaxMatching", "name"],
+  "test": [
+    {
+      "sample" : "liên hệ anh Thế Anh",
+      "expect" : ["liên hệ", "anh", "Thế Anh{name}"]
+    }
+  ]
+}

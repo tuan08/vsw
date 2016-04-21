@@ -1,0 +1,29 @@
+{
+  "otype" : "synset",
+  "name": "people",
+  "variant": ["tiểu sử", "thân thế", "biography"],
+  "type": ["people"]
+}
+{
+  "otype" : "synset",
+  "name": "peopleprops",
+  "variant": ["born", "death", "ngày sinh", "nơi sinh", "nơi chết", "quốc tịch", 
+    "death_date", "death_place", "birth_date", "birth_place"
+  ],
+  "type": ["people"]
+}
+{
+  "otype" : "query", "name" : "tag:people" ,
+  "priority":  1 , "matchmax" : 1 , "matchselector" : "first" ,
+  "description": "tag people article",
+ 
+  "match": [
+    "/p[header]  synset{name=people}",
+    "/p[infobox] synset{name=peopleprops}"
+  ],
+
+  "extract": [
+    "tag+attr: people   f=  $synset{name=people}",
+    "tag+attr: people   f=  $synset{name=peopleprops}"
+  ]
+}

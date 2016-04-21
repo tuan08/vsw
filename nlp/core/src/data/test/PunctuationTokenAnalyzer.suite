@@ -1,0 +1,14 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "punctuation"],
+  "test": [
+    {
+      "sample" : "Mr. <test> test the PunctuationAnalyzer.",
+      "expect" : ["Mr.", "<", "test", ">{punctuation}", "test", "the", "PunctuationAnalyzer", ".{punctuation}"]
+    },
+    {
+      "sample" : "Mr. test test the PunctuationAnalyzer? ",
+      "expect" : ["Mr.", "test", "test", "the", "PunctuationAnalyzer", "?{punctuation}"]
+    }
+  ]
+}

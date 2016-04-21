@@ -1,0 +1,10 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "GroupTokenMerger", "email"],
+  "test": [
+    {
+      "sample" : "tuan.nguyen@headvances.com tuan.nguyen@localhost admin@localhost",
+      "expect" : ["tuan.nguyen@headvances.com{email}", "tuan.nguyen@localhost{email}", "admin@localhost{email}"]
+    }
+  ]
+}

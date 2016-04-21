@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.vsw</groupId>
+    <artifactId>config</artifactId>
+    <version>1.0</version>
+  </parent> 
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>vsw.lib.hadoop</artifactId>
+  <name>vsw.lib.hadoop</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.vsw</groupId>
+      <artifactId>vsw.lib.common</artifactId>
+      <version>${org.vsw.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-core</artifactId>
+      <version>cdh3</version>
+      <exclusions>
+        <exclusion><groupId>org.mortbay.jetty</groupId><artifactId>jetty</artifactId></exclusion>
+        <exclusion><groupId>tomcat</groupId><artifactId>jasper-compiler</artifactId></exclusion>
+        <exclusion><groupId>tomcat</groupId><artifactId>jasper-runtime</artifactId></exclusion>
+        <exclusion><groupId>org.eclipse.jdt</groupId><artifactId>core</artifactId></exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>

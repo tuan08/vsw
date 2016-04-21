@@ -1,0 +1,59 @@
+{
+  "otype": "job",
+  "name":  "per:job phong kiến", 
+  "variant" : ["vị vua", "vị hoàng đế", "quốc vương", "vua", "hoàng đế", "hoàng thượng", "nữ hoàng", "nữ vương", "hoàng tử",
+  			   "công chúa", "quận chúa"], 
+  "type": ["nghề nghiệp", "per:job"]
+}{
+  "otype": "job",
+  "name":  "pef:job nhà nước", 
+  "variant" : ["chủ tịch nước", "phó chủ tịch nước", "thủ tướng", "thủ tướng chính phủ", "phó thủ tướng",
+  			   "phó thủ tướng thường trực", "bộ trưởng", "thứ trưởng", "thứ trưởng thường trực", "tổng thống",
+  			   "thị trưởng", "thống đốc", "chánh án", "thẩm phán", "phó tổng thống"], 
+  "type": ["nghề nghiệp", "per:job"]
+}{
+  "otype": "job",
+  "name":  "per:job đảng", 
+  "variant" : ["tổng bí thư", "bí thư", "phó bí thư", "chính ủy", "phó chính ủy"], 
+  "type": ["nghề nghiệp", "per:job"]
+}{
+  "otype": "job",
+  "name":  "per:job thể thao", 
+  "variant" : [ "tiền vệ", "tiền đạo", "hậu vệ", "thủ môn", "cầu thủ", "tay vợt", "tay đua", 
+  				"vận động viên", "vận động viên bơi lội"], 
+ "type": ["nghề nghiệp", "per:job"]
+}{
+  "otype": "job",
+  "name":  "per:job giáo dục", 
+  "variant" : ["giáo viên", "hiệu trưởng", "học sinh", "hiệu phó", "thầy giáo", "cô giáo"], 
+ "type": ["nghề nghiệp", "per:job"]
+}{
+  "otype": "job",
+  "name":  "per:job tổ chức", 
+  "variant" : ["chủ tịch hội đồng", "chủ tịch hội đồng khoa học", "chủ nhiệm", "phó chủ nhiệm", "giám đốc", 
+  			   "tổng giám đốc", "phó tổng giám đốc", "phó giám đốc", "trưởng phòng", "trưởng ban", "phó trưởng ban",
+  			   "phó phòng", "chánh văn phòng", "phó chánh văn phòng", "trưởng phòng đào tạo", "phó phòng đào tạo",
+  			   "phó chủ tịch hội đồng", "phó chủ tịch hội đồng khoa học", "chủ tịch hội đồng quản trị"]
+}{
+  "otype": "job",
+  "name":  "per:job vhxh", 
+  "variant" : ["chủ bút", "tổng biên tập", "chủ biên", "nhà báo", "nhà văn", "nhà thơ", "thi sĩ", "sử gia", "nhà ngôn ngữ học",
+  			   "diễn viên", "nam diễn viên", "nữ diễn viên", "ca sĩ", "nhạc sĩ", "nhà thơ nữ", "ca sỹ", "nữ diễn viên chính",
+  			   "nam diễn viên chính", "nhà sử học", "họa sĩ", "nghệ sĩ", "nghệ sỹ nhân dân", "phó tổng biên tập"], 
+ "type": ["nghề nghiệp", "per:job"]
+}{
+"otype": "job",
+  "name":  "per:job y tế", 
+  "variant" : ["bác sỹ", "y sỹ", "y tá", "điều dưỡng viên"], 
+ "type": ["nghề nghiệp", "per:job"]
+}{
+  "otype": "job",
+  "name":  "per:job khác", 
+  "variant" : [ "công nhân", "nông dân", "nhân viên", "kế toán", "tiếp tân", "tiếp viên", "thư ký",
+  				"phi công", "đầu bếp", "thuyền trưởng", "thủy thủ", "thương nhân", "thợ máy",
+  				"kiến trúc sư", "thám tử", "công an", "bộ đội", "thợ cắt tóc", "thợ cạo", "thợ rèn",
+  				"thợ khóa", "thợ điện", "thợ chụp ảnh", "thợ đồng hồ", "thợ nề", "thợ lặn",
+  				"thợ kim hoàn", "thợ mộc", "thợ làm bánh", "thợ sơn", "thợ tiện", "thợ xây dựng",
+  				"thợ may", "thợ máy"], 
+"type": ["nghề nghiệp", "per:job"]
+}

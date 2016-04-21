@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.vsw.sample</groupId>
+  <artifactId>sample.mallet</artifactId>
+  <name>sample.mallet</name>
+  <version>1.0</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>cc.mallet</groupId>
+      <artifactId>mallet</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>trove</groupId>
+      <artifactId>trove</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
+    <!--
+    <dependency>
+      <groupId>cc.mallet</groupId>
+      <artifactId>mallet-deps</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+    -->
+  </dependencies>   
+
+  <repositories>
+    <repository>
+      <id>resources.headvances.com</id>
+      <name>resources.headvances.com</name>
+      <url>http://117.6.10.171/mavenrepo</url>
+    </repository>
+  </repositories>
+</project>

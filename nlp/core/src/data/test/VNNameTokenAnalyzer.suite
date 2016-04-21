@@ -1,0 +1,11 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "GroupTokenMerger", "vnname"],
+  "test": [
+    {
+      "description" : "test vietnamese name pattern",
+      "sample" : "Nguyễn Tấn Dũng space Lê Lai",
+      "expect" : ["Nguyễn Tấn Dũng{vnname}", "space", "Lê Lai"]
+    }
+  ]
+}

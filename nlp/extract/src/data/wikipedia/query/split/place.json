@@ -1,0 +1,27 @@
+{
+  "otype" : "synset",
+  "name": "place",
+  "variant": ["địa danh"],
+  "type": ["place"]
+}
+{
+  "otype" : "synset",
+  "name": "placeprops",
+  "variant": ["country", "city", "diện tích"],
+  "type": ["place"]
+}
+{
+  "otype" : "query", "name" : "tag:place" ,
+  "priority":  1 , "matchmax" : 1 , "matchselector" : "first" ,
+  "description": "tag place article",
+ 
+  "match": [
+    "/p[header]  synset{name=place}",
+    "/p[infobox] synset{name=placeprops}"
+  ],
+
+  "extract": [
+    "tag+attr: place   f=  $synset{name=place}",
+    "tag+attr: place   f=  $synset{name=placeprops}"
+  ]
+}

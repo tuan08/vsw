@@ -1,0 +1,18 @@
+{
+  "otype" : "synset", "name":"person:prefix", 
+  "variant": [
+    "nhà vua", "chủ tịch nước", "thủ tướng", "tổng thống", "ca sĩ", "diễn viên"
+  ]
+}
+{
+  "otype" : "query", "name" : "person" , "matchmax" : 1,
+  "match": [
+    "/p synset{name = person:prefix} .0. name{otype = vnname, name} .10."
+  ],
+  "extract": [
+    "person:id:prefix           f=  $synset{name=person:prefix}.token",
+    "person:id:name             f=  $name{otype=vnname,name}",
+    "person:name                f=  $name{otype=vnname,name}",
+    "person:name:sample         f=  $match"
+  ]
+}

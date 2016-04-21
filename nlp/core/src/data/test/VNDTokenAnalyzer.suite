@@ -1,0 +1,31 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "vnd", "GroupTokenMerger"],
+  "test": [
+    {
+      "description" : "test dong pattern",
+      "sample" : "1000 đồng 1000 (vnd) 1000(vnd)",
+      "expect" : [
+        "1000{currency}", "đồng",
+        "1000{currency}", "(", "vnd", ")",
+        "1000{currency}", "(", "vnd", ")"
+      ]
+    },
+    {
+      "description" : "test ngàn pattern",
+      "sample" : "100 ngàn 100 ngan",
+      "expect" : [
+        "100{currency}", "ngàn",
+        "100{currency}", "ngan"
+      ]
+    },
+    {
+      "description" : "test trieu pattern",
+      "sample" : "1.2 triệu 1.2triệu",
+      "expect" : [
+        "1.2{currency}", "triệu",
+        "1.2triệu{currency}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+@prefix dc:        <http://purl.org/dc/elements/1.1/> .
+@prefix vcard:     <http://www.w3.org/2001/vcard-rdf/3.0#> .
+
+@prefix book:      <http://vsw.org/book/> .
+@prefix person:    <http://vsw.org/person/> .
+
+# A small dataset for usage examples of Joseki
+# This data is intentionaly irregular (e.g. different ways to
+# record the book creator) as if the information is either an
+# aggregation or was created at different times.
+
+book:book1
+    dc:title    "Harry Potter and the Philosopher's Stone" ;
+    dc:creator  "J.K. Rowling" ;
+    .
+    
+book:book2
+    dc:title    "Harry Potter and the Chamber of Secrets" ;
+    dc:creator  person:JKRowling .
+    
+book:book3
+    dc:title    "Harry Potter and the Prisoner Of Azkaban" ;
+    dc:creator  person:JKRowling .
+    
+book:book4
+    dc:title    "Harry Potter and the Goblet of Fire" ;
+    dc:creator  person:JKRowling .
+    
+book:book5
+    dc:title    "Harry Potter and the Order of the Phoenix";
+    dc:creator  person:JKRowling .
+
+book:book6
+    dc:title    "Harry Potter and the Half-Blood Prince";
+    dc:creator  person:JKRowling .
+
+book:book7
+    dc:title    "Harry Potter and the Deathly Hallows" ;
+    dc:creator  person:JKRowling .

@@ -1,0 +1,19 @@
+{
+  "resource": [ ],
+  "analyzer": ["common"],
+  "test": [
+    {
+      "sample" : "1234  seqletter A4 A4-A5 1.234",
+      "expect" : ["1234{digit}", "seqletter{letter}", "A4{character}", "A4-A5{character}", "1.234{number}"]
+    },
+    {
+      "sample" : "1.2 1,2 1.200.000,00 1,200,000.00",
+      "expect" : ["1.2{number}", "1,2{number}", "1.200.000,00{number}", "1,200,000.00{number}"]
+    },
+    {
+      "sample" : "test ?.? token",
+      "expect" : ["test", "?.?", "token"]
+    }
+    
+  ]
+}

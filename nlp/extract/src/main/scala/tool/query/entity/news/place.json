@@ -1,0 +1,18 @@
+{
+  "otype" : "synset", "name": "place:prefix", 
+  "variant": [
+    "đại học", "bảo tàng", "thành phố", "nước"
+  ]
+}
+{
+  "otype" : "query", "name" : "place:prefix" , "matchmax" : 1,
+  "match": [
+    "/p synset{name = place:prefix} .0. name{otype=vnname, name} .5."
+  ],
+  "extract": [
+    "place:id:prefix           f=  $synset{name=place:prefix}.token",
+    "place:id:name             f=  $name{otype=vnname,name}",
+    "place:name                f=  $name{otype=vnname,name}",
+    "place:name:sample         f=  $match"
+  ]
+}

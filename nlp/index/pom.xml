@@ -1,0 +1,28 @@
+<project>   
+  <parent>
+    <groupId>org.vsw</groupId>
+    <artifactId>config</artifactId>
+    <version>1.0</version>
+  </parent> 
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>vsw.nlp.index</artifactId>
+  <packaging>jar</packaging>
+  <version>${org.vsw.version}</version>
+  <name>vsw.nlp.index</name>
+  <description>NLP Index</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.vsw</groupId>
+      <artifactId>vsw.nlp.core</artifactId>
+      <version>${org.vsw.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-core</artifactId>
+      <version>3.0.3</version>
+    </dependency>
+  </dependencies>
+</project>

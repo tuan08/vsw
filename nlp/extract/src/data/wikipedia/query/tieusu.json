@@ -1,0 +1,55 @@
+{
+  "otype" : "synset",
+  "name": "tiểu sử",
+  "variant": ["tiểu sử", "thân thế", "abstract", "biography"],
+  "type": ["tiểu sử"]
+}
+{
+  "otype" : "synset",
+  "name": "quê quán",
+  "variant": ["sinh ra", "sinh tại", "nguyên quán"],
+  "type": ["quê quán"]
+} 
+{
+  "otype" : "query", "name" : "quequan" ,
+  "priority":  1 , "matchmax" : 1 , "matchselector" : "first" ,
+  "description": "Trích rút quê quán",
+    
+  "prematch": [ 
+    "if: $match{/p[header] synset{name=tiểu sử}} ? $continue : $exit" 
+  ],
+
+  "match": [
+    "/p synset{name=quê quán} .5. place{type=quarter,district,city,province}"
+  ],
+
+  "extract": [
+    "tag+attr: quequan:phuong   f=  $place{type=quarter}",
+    "tag+attr: quequan:quan     f=  $place{type=district}",
+    "tag+attr: quequan:thanhpho f=  $place{type=city}",
+    "tag+attr: quequan:tinh     f=  $place{type=province}"
+  ]
+}
+{
+  "otype" : "synset",
+  "name": "ngày sinh",
+  "variant": ["sinh ngày", "sinh năm", "ngày sinh"],
+  "type": ["ngày sinh"]
+}
+{
+  "otype" : "query", "name" : "ngaysinh" ,
+  "priority":  1 , "matchmax" : 1 , "matchselector" : "first" ,
+  "description": "Trích rút ngày sinh",
+    
+  "prematch": [ 
+    "if: $match{/p[header] synset{name=tiểu sử}} ? $continue : $exit" 
+  ],
+
+  "match": [
+    "/p synset{name=ngày sinh} .3. date"
+  ],
+
+  "extract": [
+    "tag+attr: ngaysinh   f=  $date"
+  ]
+}

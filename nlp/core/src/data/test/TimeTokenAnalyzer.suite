@@ -1,0 +1,16 @@
+{
+  "resource": [ ],
+  "analyzer": ["common",  "time", "GroupTokenMerger"],
+  "test": [
+    {
+      "description" : "test single token time",
+      "sample" : "12:00 12:00am 12:00:00am",
+      "expect" : ["12:00{time}", "12:00am{time}", "12:00:00am{time}"]
+    },
+    {
+      "description" : "test 2 token time, TODO: the time value tag should be convert to 24h format",
+      "sample" : "2:00 pm 2:00:00 pm",
+      "expect" : ["2:00{time}", "pm", "2:00:00{time}", "pm"]
+    }
+  ]
+}

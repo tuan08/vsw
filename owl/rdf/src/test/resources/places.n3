@@ -1,0 +1,19 @@
+@prefix place:  <http://vsw.org/onthology/place/> .
+
+# A small dataset for usage examples of Joseki
+# This data is intentionaly irregular (e.g. different ways to
+# record the book creator) as if the information is either an
+# aggregation or was created at different times.
+
+place:truong.dinh-ha.noi
+    place:name          "Truong Dinh" ;
+    place:variant       "" ;
+    place:addressNumber "";
+    place:street        "" ;
+    place:quarter       ""
+    place:district      "" ;
+    place:city          "Ha Noi";
+    place:province      "";
+    place:country       ""
+    place:postalCode    "";
+    .

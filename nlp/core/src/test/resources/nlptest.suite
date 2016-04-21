@@ -1,0 +1,20 @@
+{
+  "resource": [
+    "file:src/main/resources/vietnamese.lexicon.json", 
+    "file:src/main/resources/data.synset.json", 
+    "file:src/main/resources/vn.place.json", 
+    "file:src/main/resources/mobile.product.json"
+  ],
+  "analyzer": ["common", "date", "email"],
+  "test": [
+    {
+      "description" : "An unit test description",
+      "sample" : "token1 token2 token3",
+      "expect" : ["token1", "token2", "token3"]
+    },
+    {
+      "sample" : "token1 token2 token3",
+      "expect" : ["token1", "token2", "token3"]
+    }
+  ]
+}

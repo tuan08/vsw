@@ -1,0 +1,18 @@
+{
+  "otype" : "query", "name" : "place:latitude" , "matchmax" : 1,
+  "match": [
+    "/p[infobox] token{norm = latitude} .1. token{norm = =} .5."
+  ],
+  "extract": [
+    "place:latitude   f=  $match{to..end}"
+  ]
+}
+{
+  "otype" : "query", "name" : "place:longitude" , "matchmax" : 1,
+  "match": [
+    "/p[infobox] token{norm = longitude} .1. token{norm = =} .5."
+  ],
+  "extract": [
+    "place:longitude   f=  $match{to..end}"
+  ]
+}

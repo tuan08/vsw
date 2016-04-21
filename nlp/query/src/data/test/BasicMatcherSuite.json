@@ -1,0 +1,119 @@
+{
+  "resource": [ 
+    "classpath:nlp/vietnamese.lexicon.json",
+    "classpath:nlp/lienhe.synset.json",
+    "classpath:nlp/vn.place.json",
+    "classpath:nlp/mobile.product.json"
+  ],
+  "analyzer": [
+    "common", "punctuation", "GroupTokenMerger", "MaxMatching", "vnname",
+    "date", "email", "time", "usd", "vnd", "vnmobile", "vnphone"
+  ],
+  "synset" : [
+     {
+       "name": "liên hệ",
+       "variant": ["người đăng", "người liên hệ", "người đăng tin"],
+       "type": ["liên hệ"]
+     }
+  ],
+
+  "test": [
+    {
+      "query" : {
+        "name" : "test place matcher" , 
+        "match": [ 
+          "/p  place{type=street, district, quarter} .. place{type=district, quarter, city} .." 
+        ], 
+        "extract": [ 
+          "tag+attr: lienhe:diadiem:duong    f=  $place{type=street}", 
+          "tag+attr: lienhe:diadiem:phuong   f=  $place{type=quarter]}", 
+          "tag+attr: lienhe:diadiem:quan     f=  $place{type=district}", 
+          "tag+attr: lienhe:diadiem:thanhpho f=  $place{type=city}", 
+          "tag+attr: lienhe:diadiem:tinh     f=  $place{type=province}", 
+          "tag+attr: lienhe:diadiem:quocgia  f=  $place{type=country}" 
+        ]
+      } ,
+      "sample" : [
+        {
+          "data" : [
+            "text:  186 trương định quận hai bà trưng hà nội việt nam"
+          ],
+          "expect" : [
+            "tag: lienhe:diadiem:duong=trương định",
+            "tag: lienhe:diadiem:quan=hai bà trưng",
+            "tag: lienhe:diadiem:thanhpho=hà nội"
+          ]
+        }
+      ]
+    },
+
+    {
+      "query" : {
+        "name" : "test email matcher" , 
+        "match": [ 
+          "/p  synset{name=liên hệ} .. email{provider=*.com}"
+        ], 
+        "extract": [ 
+          "tag+attr: lienhe:email   f=  $email"
+        ]
+      } ,
+      "sample" : [
+        {
+          "data" : [
+            "text: liên hệ email tuan.nguyen@headvances.com"
+          ],
+          "expect" : [
+            "tag: lienhe:email=tuan.nguyen@headvances.com"
+          ]
+        }
+      ]
+    },
+
+    {
+      "query" : {
+        "name" : "test punctuation matcher" , 
+        "match": [ 
+          "/p  synset{name=liên hệ} .. token{norm = =} .. email{provider=*.com}"
+        ], 
+        "extract": [ 
+          "tag+attr: lienhe:email   f=  $email"
+        ]
+      } ,
+      "sample" : [
+        {
+          "data" : [
+            "text: liên hệ = tuan.nguyen@headvances.com"
+          ],
+          "expect" : [
+            "tag: lienhe:email=tuan.nguyen@headvances.com"
+          ]
+        }
+      ]
+    },
+
+    {
+      "query" : {
+        "name" : "test word matcher" , 
+        "match": [ 
+          "/p  synset{name=liên hệ} .. name{otype=vnname}"
+        ], 
+        "extract": [ 
+          "tag+attr: lienhe:name   f=  $name{otype=vnname}"
+        ],
+        "postmatch": [
+          "print: match"
+        ]
+      } ,
+      "sample" : [
+        {
+          "data" : [
+            "text: xin liên hệ ông Nguyễn Tấn Dũng"
+          ],
+          "expect" : [
+            "tag: lienhe:name=Nguyễn Tấn Dũng"
+          ]
+        }
+      ]
+    }
+  ]
+}

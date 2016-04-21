@@ -1,0 +1,24 @@
+{
+  "resource": [ ],
+  "analyzer": ["common",  "usd", "GroupTokenMerger"],
+  "test": [
+    {
+      "description" : "test ? USD pattern",
+      "sample" : "1000 USD 1000 (USD) 15.5(USD)",
+      "expect" : [
+        "1000{currency}", "USD", 
+        "1000{currency}", "(", "USD", ")",
+        "15.5{currency}", "(",  "USD", ")"]
+    },
+    {
+      "description" : "test usd? pattern",
+      "sample" : "usd1000",
+      "expect" : [ "usd1000{currency}"]
+    },
+    {
+      "description" : "test ?$ pattern",
+      "sample" : "1000$ $1000",
+      "expect" : ["1000${currency}", "$1000{currency}"]
+    }
+  ]
+}

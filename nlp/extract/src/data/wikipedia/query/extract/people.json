@@ -1,0 +1,23 @@
+{"otype" : "lexicon", "name":"tên khai sinh"}
+{
+  "otype" : "query", "name" : "person:vcard:FN" , "matchmax" : 1,
+  "match": [
+    "/p[infobox] token{norm = tên khai sinh} .1. token{norm = =} .2. name{otype=vnname, name} .3.",
+    "/p[infobox] token{norm = tên khai sinh} .1. token{norm = =} .3."
+  ],
+  "extract": [
+    "person:vcard:FN   f=  $name{otype=vnname, name}",
+    "person:vcard:FN   f=  $match{to..end}"
+  ]
+}
+{
+  "otype" : "query", "name" : "person:born" , "matchmax" : 1,
+  "match": [
+    "/p[infobox] token{norm = born, birth_date} .1. token{norm = =} .2. date",
+    "/p[infobox] token{norm = born, birth_date} .1. token{norm = =} .3."
+  ],
+  "extract": [
+    "person:born   f=  $date",
+    "person:born   f=  $match{to..end}"
+  ]
+}

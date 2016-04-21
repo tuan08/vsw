@@ -1,0 +1,21 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "GroupTokenMerger", "vnphone"],
+  "test": [
+    {
+      "description" : "test vnphone pattern",
+      "sample" : "36634567 3663.4567",
+      "expect" : ["36634567{phone}", "3663.4567{phone}"]
+    },
+    {
+      "description" : "test vnphone pattern",
+      "sample" : "(04)36634567 (04) 36634567 (04) 3663.4567 (04) 3663-4567",
+      "expect" : ["( 04 ) 36634567{phone}", "( 04 ) 36634567{phone}", "( 04 ) 3663.4567{phone}", "( 04 ) 3663-4567{phone}"]
+    },
+    {
+      "description" : "test vnphone pattern",
+      "sample" : "04-3663-4567 04 3663-4567",
+      "expect" : ["04-3663-4567{phone}", "04 3663-4567{phone}"]
+    }
+  ]
+}

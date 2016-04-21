@@ -1,0 +1,26 @@
+{
+  "resource": [ 
+    "classpath:nlp/vietnamese.lexicon.json",
+    "classpath:nlp/lienhe.synset.json",
+    "classpath:nlp/meaning/vn.place.json",
+    "classpath:nlp/mobile.product.json"
+  ],
+  "analyzer": ["common", "punctuation", "GroupTokenMerger", "MaxMatching"],
+  "test": [
+    {
+      "description" : "test max matching analyzer",
+      "sample" : "Một quả bom sắp nổ.",
+      "expect" : ["Một", "quả bom{lexicon, synset}", "sắp", "nổ", "."]
+    },
+    {
+      "description" : "test max matching analyzer",
+      "sample" : "186 trương định",
+      "expect" : ["186", "trương định{place}"]
+    },
+    {
+      "description" : "test max matching analyzer",
+      "sample" : "mua iphone",
+      "expect" : ["mua", "iphone{product}"]
+    }
+  ]
+}

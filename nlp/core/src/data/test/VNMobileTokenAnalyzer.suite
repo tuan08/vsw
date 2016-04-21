@@ -1,0 +1,14 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "GroupTokenMerger", "vnmobile"],
+  "test": [
+    {
+      "description" : "test vnmobile pattern",
+      "sample" : "0988922860 098.892.2860 0988.922860 098-892-2860 098 892 2860 (098) 892 2860",
+      "expect" : [
+        "0988922860{phone}", "098.892.2860{phone}", "0988.922860{phone}",
+        "098-892-2860{phone}", "098 892 2860{phone}", "( 098 ) 892 2860{phone}"
+      ]
+    }
+  ]
+}

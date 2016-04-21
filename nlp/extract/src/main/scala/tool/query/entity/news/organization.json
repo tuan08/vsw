@@ -1,0 +1,18 @@
+{
+  "otype" : "synset", "name": "organization:prefix", 
+  "variant": [
+    "công ty"
+  ]
+}
+{
+  "otype" : "query", "name" : "organization:prefix" , "matchmax" : 1,
+  "match": [
+    "/p synset{name = organization:prefix} .0. name{otype=vnname, name} .5."
+  ],
+  "extract": [
+    "organization:id:prefix           f=  $synset{name=organization:prefix}.token",
+    "organization:id:name             f=  $name{otype=vnname,name}",
+    "organization:name                f=  $name{otype=vnname,name}",
+    "organization:name:sample         f=  $match"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "GroupTokenMerger", "date"],
+  "test": [
+    {
+      "sample" : "12/2/2010 12.2.2010 12-2-2010 2010/2/12",
+      "expect" : ["12/2/2010{date}", "12.2.2010{date}", "12-2-2010{date}", "2010/2/12{date}"]
+    }
+  ]
+}

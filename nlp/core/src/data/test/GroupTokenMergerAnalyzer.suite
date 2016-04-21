@@ -1,0 +1,10 @@
+{
+  "resource": [ ],
+  "analyzer": ["common", "GroupTokenMerger"],
+  "test": [
+    {
+      "sample" : "666 777 888 999",
+      "expect" : ["666 777 888 999"]
+    }
+  ]
+}

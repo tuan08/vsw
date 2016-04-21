@@ -1,0 +1,22 @@
+<project>   
+  <parent>
+    <groupId>org.vsw</groupId>
+    <artifactId>config</artifactId>
+    <version>1.0</version>
+  </parent> 
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>vsw.nlp.query</artifactId>
+  <packaging>jar</packaging>
+  <version>${org.vsw.version}</version>
+  <name>vsw.nlp.query</name>
+  <description>NLP Query</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.vsw</groupId>
+      <artifactId>vsw.nlp.core</artifactId>
+      <version>${org.vsw.version}</version>
+    </dependency>
+  </dependencies>
+</project>

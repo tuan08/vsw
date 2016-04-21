@@ -1,0 +1,12 @@
+@prefix dc:        <http://purl.org/dc/elements/1.1/> .
+@prefix vcard:     <http://www.w3.org/2001/vcard-rdf/3.0#> .
+
+@prefix person:    <http://vsw.org/person/> .
+
+person:JKRowling
+    vcard:FN "J.K. Rowling" ;
+    vcard:N
+        [ vcard:Family "Rowling" ;
+          vcard:Given "Joanna" 
+        ]
+    .
